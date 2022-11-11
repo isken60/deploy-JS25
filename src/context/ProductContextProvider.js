@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 export const productContext = createContext(); // облако
 
-const API = "http://localhost:8000/products";
+const API = "https://project-mentor-js25.herokuapp.com/products";
 
 const INIT_STATE = {
   products: null,
@@ -27,7 +27,7 @@ function reducer(prevState, action) {
   }
 }
 
-const ProductContextProvider = (props) => {
+const ProductContextProvider = props => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   const location = useLocation();
 
